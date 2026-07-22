@@ -1,0 +1,22 @@
+# BasicTrailClosureFlow
+
+main: kit: flow: BasicTrailClosureFlow:
+{
+  entity: "trail_closure",
+  kind: "basic",
+  name: "BasicTrailClosureFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "trail_closure_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTrailClosureFlow"
+}

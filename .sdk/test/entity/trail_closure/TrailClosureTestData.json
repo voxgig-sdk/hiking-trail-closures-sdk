@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "trail_closure": {
+      "TRAIL_CLOSURE00": {
+        "geometry": {},
+        "id": "TRAIL_CLOSURE00",
+        "property": {},
+        "type": "s2b"
+      },
+      "TRAIL_CLOSURE01": {
+        "geometry": {},
+        "id": "TRAIL_CLOSURE01",
+        "property": {},
+        "type": "s53"
+      },
+      "TRAIL_CLOSURE02": {
+        "geometry": {},
+        "id": "TRAIL_CLOSURE02",
+        "property": {},
+        "type": "s7b"
+      }
+    }
+  },
+  "new": {
+    "trail_closure": {
+      "trail_closure_ref01": {
+        "geometry": {},
+        "property": {},
+        "type": "sa3"
+      }
+    }
+  }
+}

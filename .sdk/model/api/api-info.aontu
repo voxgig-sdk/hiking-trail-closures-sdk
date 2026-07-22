@@ -1,0 +1,26 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        name: "Swiss Federal Administration"
+        url: "https://www.admin.ch/en/nsb?id=80093"
+      }
+      description: "This API provides up-to-date information about closures and diversions of hiking trails as well as cycle and mountain bike routes in Switzerland. Data is updated daily and presented in a standardized format for developers to integrate into their applications."
+      servers: [
+        {
+          description: "Swiss Geoportal Production Server"
+          url: "https://data.geo.admin.ch"
+        }
+      ]
+      summary: "This API provides up-to-date information about closures and diversions of hiking trails as well as cycle and mountain bike routes in Switzerland."
+      title: "Hiking Trail Closures"
+      version: "1.0.0"
+      website: "https://data.geo.admin.ch"
+    }
+  }
+}
+

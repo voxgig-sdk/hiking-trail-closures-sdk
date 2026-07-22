@@ -1,0 +1,200 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Hiking Trail Closures",
+    "description": "This API provides up-to-date information about closures and diversions of hiking trails as well as cycle and mountain bike routes in Switzerland. Data is updated daily and presented in a standardized format for developers to integrate into their applications.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Swiss Federal Administration",
+      "url": "https://www.admin.ch/en/nsb?id=80093"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://data.geo.admin.ch",
+      "description": "Swiss Geoportal Production Server"
+    }
+  ],
+  "paths": {
+    "/ch.astra.wanderland-sperrungen_umleitungen/": {
+      "get": {
+        "summary": "Get hiking trail closures and diversions",
+        "description": "Retrieves current information about closures and diversions of hiking trails, cycle routes, and mountain bike routes in Switzerland. Data is updated daily.",
+        "operationId": "getTrailClosures",
+        "tags": [
+          "Trail Closures"
+        ],
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json, geojson, xml)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "geojson",
+                "xml"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Language for response (de, fr, it, en)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "de",
+                "fr",
+                "it",
+                "en"
+              ],
+              "default": "de"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with trail closure information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "FeatureCollection"
+                    },
+                    "features": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "example": "Feature"
+                          },
+                          "id": {
+                            "type": "string",
+                            "description": "Unique identifier for the closure"
+                          },
+                          "geometry": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "example": "LineString"
+                              },
+                              "coordinates": {
+                                "type": "array",
+                                "items": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "properties": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "Name of the affected trail or route"
+                              },
+                              "type": {
+                                "type": "string",
+                                "description": "Type of route (hiking trail, cycle route, mountain bike route)",
+                                "enum": [
+                                  "hiking",
+                                  "cycling",
+                                  "mountainbike"
+                                ]
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "Closure status",
+                                "enum": [
+                                  "closed",
+                                  "diverted"
+                                ]
+                              },
+                              "reason": {
+                                "type": "string",
+                                "description": "Reason for closure or diversion"
+                              },
+                              "startDate": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "Start date of the closure"
+                              },
+                              "endDate": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "Expected end date of the closure"
+                              },
+                              "description": {
+                                "type": "string",
+                                "description": "Detailed description of the closure or diversion"
+                              },
+                              "alternativeRoute": {
+                                "type": "string",
+                                "description": "Information about alternative routes"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "application/geo+json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "FeatureCollection"
+                    },
+                    "features": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "503": {
+            "description": "Service unavailable"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Trail Closures",
+      "description": "Operations related to hiking trail and cycle route closures and diversions"
+    }
+  ]
+}
