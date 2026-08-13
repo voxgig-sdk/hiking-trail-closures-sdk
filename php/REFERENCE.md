@@ -94,7 +94,7 @@ $trail_closure = $client->TrailClosure();
 | --- | --- | --- | --- |
 | `geometry` | `array` | No |  |
 | `id` | `string` | No |  |
-| `property` | `array` | No |  |
+| `properties` | `array` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

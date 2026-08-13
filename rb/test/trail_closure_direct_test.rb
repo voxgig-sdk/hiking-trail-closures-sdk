@@ -60,11 +60,11 @@ def trail_closure_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID" => {},
-    "HIKINGTRAILCLOSURES_TEST_LIVE" => "FALSE",
+    "HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID" => {},
+    "HIKING_TRAIL_CLOSURES_TEST_LIVE" => "FALSE",
   })
 
-  live = env["HIKINGTRAILCLOSURES_TEST_LIVE"] == "TRUE"
+  live = env["HIKING_TRAIL_CLOSURES_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

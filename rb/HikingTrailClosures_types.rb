@@ -16,7 +16,7 @@
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] property
+# @!attribute [rw] properties
 #   @return [Hash, nil]
 #
 # @!attribute [rw] type
@@ -24,7 +24,7 @@
 TrailClosure = Struct.new(
   :geometry,
   :id,
-  :property,
+  :properties,
   :type,
   keyword_init: true
 )
@@ -37,7 +37,7 @@ TrailClosure = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] property
+# @!attribute [rw] properties
 #   @return [Hash, nil]
 #
 # @!attribute [rw] type
@@ -45,7 +45,7 @@ TrailClosure = Struct.new(
 TrailClosureListMatch = Struct.new(
   :geometry,
   :id,
-  :property,
+  :properties,
   :type,
   keyword_init: true
 )

@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'HikingTrailClosures',
   }
 
 
@@ -70,7 +70,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "property",
+          "name": "properties",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 2
@@ -113,6 +113,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/ch.astra.wanderland-sperrungen_umleitungen/",
               "parts": [
@@ -126,7 +127,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.features`"
               },
               "index$": 0
             }

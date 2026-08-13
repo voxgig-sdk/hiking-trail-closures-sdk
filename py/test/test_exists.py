@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# HikingTrailClosures SDK exists test
 
 import pytest
 from hikingtrailclosures_sdk import HikingTrailClosuresSDK

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import HikingTrailClosuresControl
-from core.error import HikingTrailClosuresError
-from core.result import HikingTrailClosuresResult
-from core.spec import HikingTrailClosuresSpec
+from hikingtrailclosures_sdk.config import make_config
+from hikingtrailclosures_sdk.features import _make_feature
+from hikingtrailclosures_sdk.core.control import HikingTrailClosuresControl
+from hikingtrailclosures_sdk.core.error import HikingTrailClosuresError
+from hikingtrailclosures_sdk.core.result import HikingTrailClosuresResult
+from hikingtrailclosures_sdk.core.spec import HikingTrailClosuresSpec
 
 
 # True when this SDK was generated with the named feature.

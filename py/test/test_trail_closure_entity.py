@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from hikingtrailclosures_sdk.utility.voxgig_struct import voxgig_struct as vs
 from hikingtrailclosures_sdk import HikingTrailClosuresSDK
-from core import helpers
+from hikingtrailclosures_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -42,7 +42,7 @@ class TestTrailClosureEntity:
         assert len(seen) == 3
 
         # Inbound: streaming active -> yields each item from the feature.
-        from config import make_config
+        from hikingtrailclosures_sdk.config import make_config
         cfg = make_config()
         if isinstance(cfg.get("feature"), dict) and "streaming" in cfg["feature"]:
             sdk = HikingTrailClosuresSDK.test(
@@ -70,7 +70,7 @@ class TestTrailClosureEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID JSON to run live")
+                        "set HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID JSON to run live")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -118,21 +118,21 @@ def _trail_closure_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID")
+        "HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID": idmap,
-        "HIKINGTRAILCLOSURES_TEST_LIVE": "FALSE",
-        "HIKINGTRAILCLOSURES_TEST_EXPLAIN": "FALSE",
+        "HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID": idmap,
+        "HIKING_TRAIL_CLOSURES_TEST_LIVE": "FALSE",
+        "HIKING_TRAIL_CLOSURES_TEST_EXPLAIN": "FALSE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID"))
+        env.get("HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("HIKINGTRAILCLOSURES_TEST_LIVE") == "TRUE":
+    if env.get("HIKING_TRAIL_CLOSURES_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
             },
@@ -140,13 +140,13 @@ def _trail_closure_basic_setup(extra):
         ])
         client = HikingTrailClosuresSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("HIKINGTRAILCLOSURES_TEST_LIVE") == "TRUE"
+    _live = env.get("HIKING_TRAIL_CLOSURES_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("HIKINGTRAILCLOSURES_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("HIKING_TRAIL_CLOSURES_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

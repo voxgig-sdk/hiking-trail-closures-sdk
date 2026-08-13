@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = HikingTrailClosuresSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 trailclosure = client.TrailClosure.list()
 puts trailclosure
 ```
@@ -238,7 +239,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `geometry` |  |
 | `id` |  |
-| `property` |  |
+| `properties` |  |
 | `type` |  |
 
 Operations: List.
@@ -266,7 +267,7 @@ Create an instance: `trail_closure = client.TrailClosure`
 | --- | --- | --- |
 | `geometry` | `Hash` |  |
 | `id` | `String` |  |
-| `property` | `Hash` |  |
+| `properties` | `Hash` |  |
 | `type` | `String` |  |
 
 #### Example: List

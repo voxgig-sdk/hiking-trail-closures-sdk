@@ -92,7 +92,7 @@ func TestTrailClosureEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -160,21 +160,21 @@ func trail_closureBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID")
+	entidEnvRaw := os.Getenv("HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID": idmap,
-		"HIKINGTRAILCLOSURES_TEST_LIVE":      "FALSE",
-		"HIKINGTRAILCLOSURES_TEST_EXPLAIN":   "FALSE",
+		"HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID": idmap,
+		"HIKING_TRAIL_CLOSURES_TEST_LIVE":      "FALSE",
+		"HIKING_TRAIL_CLOSURES_TEST_EXPLAIN":   "FALSE",
 	})
 
-	idmapResolved := core.ToMapAny(env["HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID"])
+	idmapResolved := core.ToMapAny(env["HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["HIKINGTRAILCLOSURES_TEST_LIVE"] == "TRUE" {
+	if env["HIKING_TRAIL_CLOSURES_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
 			},
@@ -183,13 +183,13 @@ func trail_closureBasicSetup(extra map[string]any) *entityTestSetup {
 		client = sdk.NewHikingTrailClosuresSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["HIKINGTRAILCLOSURES_TEST_LIVE"] == "TRUE"
+	live := env["HIKING_TRAIL_CLOSURES_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["HIKINGTRAILCLOSURES_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["HIKING_TRAIL_CLOSURES_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

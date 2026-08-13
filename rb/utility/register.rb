@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ HikingTrailClosuresUtility.registrar = ->(u) {
   u.prepare_params = HikingTrailClosuresUtilities::PrepareParams
   u.prepare_path = HikingTrailClosuresUtilities::PreparePath
   u.prepare_query = HikingTrailClosuresUtilities::PrepareQuery
+  u.graphql_body = HikingTrailClosuresUtilities::GraphqlBody
+  u.graphql_errors = HikingTrailClosuresUtilities::GraphqlErrors
   u.result_basic = HikingTrailClosuresUtilities::ResultBasic
   u.result_body = HikingTrailClosuresUtilities::ResultBody
   u.result_headers = HikingTrailClosuresUtilities::ResultHeaders

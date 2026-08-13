@@ -40,7 +40,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "property",
+						"name": "properties",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 2,
@@ -83,6 +83,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/ch.astra.wanderland-sperrungen_umleitungen/",
 								"parts": []any{
@@ -96,12 +97,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.features`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

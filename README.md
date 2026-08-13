@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = HikingTrailClosuresSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = HikingTrailClosuresSDK.test({
+  entity: {
+    trail_closure: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const trailclosures = await client.TrailClosure().list()
-// trailclosures is an array of bare TrailClosure records populated with mock data
+// trailclosures is an array of TrailClosure entities, populated with mock data
+// — call trailclosures[0].data() for the record itself
 console.log(trailclosures)
 ```
 
@@ -110,7 +119,7 @@ import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures'
 
 const client = new HikingTrailClosuresSDK()
 
-// List all trailclosures (returns TrailClosure[])
+// List all trailclosures (returns TrailClosureEntity[] — .data() for the record)
 const trailclosures = await client.TrailClosure().list()
 for (const trailclosure of trailclosures) {
   console.log(trailclosure)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.admin.ch/en/nsb?id=80093](https://www.admin.ch/en/nsb?id=80093)
 

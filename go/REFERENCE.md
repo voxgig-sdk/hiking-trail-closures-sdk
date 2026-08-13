@@ -100,7 +100,7 @@ fmt.Println(trailClosure.GetName()) // "trail_closure"
 | --- | --- | --- | --- |
 | `geometry` | `map[string]any` | No |  |
 | `id` | `string` | No |  |
-| `property` | `map[string]any` | No |  |
+| `properties` | `map[string]any` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

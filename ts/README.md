@@ -35,7 +35,9 @@ const client = new HikingTrailClosuresSDK()
 
 ### 2. List trailclosure records
 
-`list()` resolves to an array of TrailClosure objects — iterate it directly:
+`list()` resolves to an array of TrailClosure ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const trailclosures = await client.TrailClosure().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = HikingTrailClosuresSDK.test()
 
 const trailclosure = await client.TrailClosure().list()
-// trailclosure is a bare entity populated with mock response data
+// trailclosure is the entity, populated with mock response data
+// — call trailclosure.data() for the record itself
 console.log(trailclosure)
 ```
 
@@ -286,7 +289,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `geometry` |  |
 | `id` |  |
-| `property` |  |
+| `properties` |  |
 | `type` |  |
 
 Operations: list.
@@ -314,7 +317,7 @@ Create an instance: `const trail_closure = client.TrailClosure()`
 | --- | --- | --- |
 | `geometry` | `Record<string, any>` |  |
 | `id` | `string` |  |
-| `property` | `Record<string, any>` |  |
+| `properties` | `Record<string, any>` |  |
 | `type` | `string` |  |
 
 #### Example: List

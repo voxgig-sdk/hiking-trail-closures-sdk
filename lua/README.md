@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local trail_closure, err = client:TrailClosure():load()
+    local trail_closure, err = client:TrailClosure():list()
     if err then error(err) end
-    -- trail_closure is the loaded record
+    -- trail_closure is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -233,7 +233,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `geometry` |  |
 | `id` |  |
-| `property` |  |
+| `properties` |  |
 | `type` |  |
 
 Operations: List.
@@ -261,7 +261,7 @@ Create an instance: `local trail_closure = client:TrailClosure(nil)`
 | --- | --- | --- |
 | `geometry` | `table` |  |
 | `id` | `string` |  |
-| `property` | `table` |  |
+| `properties` | `table` |  |
 | `type` | `string` |  |
 
 #### Example: List

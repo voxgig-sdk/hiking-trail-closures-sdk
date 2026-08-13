@@ -8,6 +8,7 @@ guide: {
   entity: trail_closure: {
     path: "/ch.astra.wanderland-sperrungen_umleitungen/": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.features`")|top
     }
   }
 

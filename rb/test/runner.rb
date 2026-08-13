@@ -23,8 +23,8 @@ module HikingTrailClosuresTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("HIKINGTRAILCLOSURES_TEST_LIVE")
-    override = getenv("HIKINGTRAILCLOSURES_TEST_OVERRIDE")
+    live = getenv("HIKING_TRAIL_CLOSURES_TEST_LIVE")
+    override = getenv("HIKING_TRAIL_CLOSURES_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module HikingTrailClosuresTestRunner
       end
     end
 
-    explain = getenv("HIKINGTRAILCLOSURES_TEST_EXPLAIN")
-    m["HIKINGTRAILCLOSURES_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("HIKING_TRAIL_CLOSURES_TEST_EXPLAIN")
+    m["HIKING_TRAIL_CLOSURES_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

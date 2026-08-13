@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import HikingTrailClosuresSDK
-from core.error import HikingTrailClosuresError
-from core.result import HikingTrailClosuresResult
-from core.response import HikingTrailClosuresResponse
-from core.spec import HikingTrailClosuresSpec
-from feature.base_feature import HikingTrailClosuresBaseFeature
+from projectname_sdk.core.error import HikingTrailClosuresError
+from projectname_sdk.core.result import HikingTrailClosuresResult
+from projectname_sdk.core.response import HikingTrailClosuresResponse
+from projectname_sdk.core.spec import HikingTrailClosuresSpec
+from projectname_sdk.feature.base_feature import HikingTrailClosuresBaseFeature
 
 
 def _client():

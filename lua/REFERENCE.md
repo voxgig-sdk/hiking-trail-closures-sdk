@@ -92,7 +92,7 @@ local trail_closure = client:TrailClosure(nil)
 | --- | --- | --- | --- |
 | `geometry` | `table` | No |  |
 | `id` | `string` | No |  |
-| `property` | `table` | No |  |
+| `properties` | `table` | No |  |
 | `type` | `string` | No |  |
 
 ### Operations

@@ -95,7 +95,7 @@ trail_closure = client.TrailClosure
 | --- | --- | --- | --- |
 | `geometry` | `Hash` | No |  |
 | `id` | `String` | No |  |
-| `property` | `Hash` | No |  |
+| `properties` | `Hash` | No |  |
 | `type` | `String` | No |  |
 
 ### Operations

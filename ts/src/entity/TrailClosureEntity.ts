@@ -37,7 +37,7 @@ class TrailClosureEntity extends HikingTrailClosuresEntityBase<TrailClosure> {
 
 
 
-  async list(this: any, reqmatch?: TrailClosureListMatch, ctrl?: Control): Promise<TrailClosure[]> {
+  async list(this: any, reqmatch?: TrailClosureListMatch, ctrl?: Control): Promise<TrailClosureEntity[]> {
 
     const utility = this._utility
 

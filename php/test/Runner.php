@@ -43,8 +43,8 @@ class HikingTrailClosuresTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('HIKINGTRAILCLOSURES_TEST_LIVE');
-        $override = self::getenv('HIKINGTRAILCLOSURES_TEST_OVERRIDE');
+        $live = self::getenv('HIKING_TRAIL_CLOSURES_TEST_LIVE');
+        $override = self::getenv('HIKING_TRAIL_CLOSURES_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class HikingTrailClosuresTestRunner
             }
         }
 
-        $explain = self::getenv('HIKINGTRAILCLOSURES_TEST_EXPLAIN');
+        $explain = self::getenv('HIKING_TRAIL_CLOSURES_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['HIKINGTRAILCLOSURES_TEST_EXPLAIN'] = $explain;
+            $m['HIKING_TRAIL_CLOSURES_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -41,7 +41,7 @@ module HikingTrailClosuresConfig
             },
             {
               "active" => true,
-              "name" => "property",
+              "name" => "properties",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 2,
@@ -84,6 +84,7 @@ module HikingTrailClosuresConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/ch.astra.wanderland-sperrungen_umleitungen/",
                   "parts" => [
@@ -97,7 +98,7 @@ module HikingTrailClosuresConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.features`",
                   },
                   "index$" => 0,
                 },

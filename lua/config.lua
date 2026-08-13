@@ -40,7 +40,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "property",
+            ["name"] = "properties",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 2,
@@ -83,6 +83,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/ch.astra.wanderland-sperrungen_umleitungen/",
                 ["parts"] = {
@@ -96,7 +97,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.features`",
                 },
                 ["index$"] = 0,
               },

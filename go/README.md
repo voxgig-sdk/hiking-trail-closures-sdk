@@ -262,7 +262,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"geometry"` |  |
 | `"id"` |  |
-| `"property"` |  |
+| `"properties"` |  |
 | `"type"` |  |
 
 Operations: List.
@@ -290,7 +290,7 @@ Create an instance: `trailClosure := client.TrailClosure(nil)`
 | --- | --- | --- |
 | `geometry` | `map[string]any` |  |
 | `id` | `string` |  |
-| `property` | `map[string]any` |  |
+| `properties` | `map[string]any` |  |
 | `type` | `string` |  |
 
 #### Example: List

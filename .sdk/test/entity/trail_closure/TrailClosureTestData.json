@@ -4,19 +4,19 @@
       "TRAIL_CLOSURE00": {
         "geometry": {},
         "id": "TRAIL_CLOSURE00",
-        "property": {},
+        "properties": {},
         "type": "s2b"
       },
       "TRAIL_CLOSURE01": {
         "geometry": {},
         "id": "TRAIL_CLOSURE01",
-        "property": {},
+        "properties": {},
         "type": "s53"
       },
       "TRAIL_CLOSURE02": {
         "geometry": {},
         "id": "TRAIL_CLOSURE02",
-        "property": {},
+        "properties": {},
         "type": "s7b"
       }
     }
@@ -25,7 +25,7 @@
     "trail_closure": {
       "trail_closure_ref01": {
         "geometry": {},
-        "property": {},
+        "properties": {},
         "type": "sa3"
       }
     }

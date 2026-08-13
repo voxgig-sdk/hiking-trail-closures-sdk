@@ -8,14 +8,14 @@
 export interface TrailClosure {
   geometry?: Record<string, any>
   id?: string
-  property?: Record<string, any>
+  properties?: Record<string, any>
   type?: string
 }
 
 export interface TrailClosureListMatch {
   geometry?: Record<string, any>
   id?: string
-  property?: Record<string, any>
+  properties?: Record<string, any>
   type?: string
 }
 

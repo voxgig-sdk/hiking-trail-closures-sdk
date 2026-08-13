@@ -17,7 +17,7 @@ class TrailClosure
 {
     public ?array $geometry = null;
     public ?string $id = null;
-    public ?array $property = null;
+    public ?array $properties = null;
     public ?string $type = null;
 }
 
@@ -26,7 +26,7 @@ class TrailClosureListMatch
 {
     public ?array $geometry = null;
     public ?string $id = null;
-    public ?array $property = null;
+    public ?array $properties = null;
     public ?string $type = null;
 }
 

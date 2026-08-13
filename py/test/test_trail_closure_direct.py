@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from hikingtrailclosures_sdk.utility.voxgig_struct import voxgig_struct as vs
 from hikingtrailclosures_sdk import HikingTrailClosuresSDK
-from core import helpers
+from hikingtrailclosures_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _trail_closure_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID": {},
-        "HIKINGTRAILCLOSURES_TEST_LIVE": "FALSE",
+        "HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID": {},
+        "HIKING_TRAIL_CLOSURES_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("HIKINGTRAILCLOSURES_TEST_LIVE") == "TRUE"
+    live = env.get("HIKING_TRAIL_CLOSURES_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

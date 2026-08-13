@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.HIKINGTRAILCLOSURES_TEST_LIVE ||
-    'TRUE' === process.env.HIKINGTRAILCLOSURES_TEST_OVERRIDE
+    'TRUE' === process.env.HIKING_TRAIL_CLOSURES_TEST_LIVE ||
+    'TRUE' === process.env.HIKING_TRAIL_CLOSURES_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.HIKINGTRAILCLOSURES_TEST_EXPLAIN = process.env.HIKINGTRAILCLOSURES_TEST_EXPLAIN || m.HIKINGTRAILCLOSURES_TEST_EXPLAIN
+  m.HIKING_TRAIL_CLOSURES_TEST_EXPLAIN = process.env.HIKING_TRAIL_CLOSURES_TEST_EXPLAIN || m.HIKING_TRAIL_CLOSURES_TEST_EXPLAIN
 
   return m
 }

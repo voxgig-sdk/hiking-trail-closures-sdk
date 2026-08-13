@@ -19,11 +19,15 @@ import {
 describe('TrailClosureDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when HIKINGTRAILCLOSURES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('HIKINGTRAILCLOSURES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when HIKING_TRAIL_CLOSURES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('HIKING_TRAIL_CLOSURES_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new HikingTrailClosuresSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID': {},
-    'HIKINGTRAILCLOSURES_TEST_LIVE': 'FALSE',
+    'HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID': {},
+    'HIKING_TRAIL_CLOSURES_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.HIKINGTRAILCLOSURES_TEST_LIVE
+  const live = 'TRUE' === env.HIKING_TRAIL_CLOSURES_TEST_LIVE
 
   if (live) {
     const client = new HikingTrailClosuresSDK({
     })
 
-    let idmap: any = env['HIKINGTRAILCLOSURES_TEST_TRAIL_CLOSURE_ENTID']
+    let idmap: any = env['HIKING_TRAIL_CLOSURES_TEST_TRAIL_CLOSURE_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

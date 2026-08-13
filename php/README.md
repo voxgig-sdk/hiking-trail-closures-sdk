@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = HikingTrailClosuresSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $trailclosure = $client->TrailClosure()->list();
 print_r($trailclosure);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -248,7 +249,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `geometry` |  |
 | `id` |  |
-| `property` |  |
+| `properties` |  |
 | `type` |  |
 
 Operations: List.
@@ -276,7 +277,7 @@ Create an instance: `$trail_closure = $client->TrailClosure();`
 | --- | --- | --- |
 | `geometry` | `array` |  |
 | `id` | `string` |  |
-| `property` | `array` |  |
+| `properties` | `array` |  |
 | `type` | `string` |  |
 
 #### Example: List

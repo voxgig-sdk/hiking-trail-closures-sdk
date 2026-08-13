@@ -16,7 +16,7 @@ main: kit: entity: trail_closure: {
       type: "`$STRING`"
     }
     {
-      name: "property"
+      name: "properties"
       req: false
       type: "`$OBJECT`"
     }
@@ -71,7 +71,7 @@ main: kit: entity: trail_closure: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.features`"
           }
         }
       ]

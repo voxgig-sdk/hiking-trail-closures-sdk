@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ HikingTrailClosuresUtility::setRegistrar(function (HikingTrailClosuresUtility $u
     $u->prepare_params = [HikingTrailClosuresPrepareParams::class, 'call'];
     $u->prepare_path = [HikingTrailClosuresPreparePath::class, 'call'];
     $u->prepare_query = [HikingTrailClosuresPrepareQuery::class, 'call'];
+    $u->graphql_body = [HikingTrailClosuresGraphql::class, 'body'];
+    $u->graphql_errors = [HikingTrailClosuresGraphql::class, 'errors'];
     $u->result_basic = [HikingTrailClosuresResultBasic::class, 'call'];
     $u->result_body = [HikingTrailClosuresResultBody::class, 'call'];
     $u->result_headers = [HikingTrailClosuresResultHeaders::class, 'call'];

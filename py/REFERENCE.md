@@ -89,7 +89,7 @@ trail_closure = client.TrailClosure()
 | --- | --- | --- | --- |
 | `geometry` | `dict` | No |  |
 | `id` | `str` | No |  |
-| `property` | `dict` | No |  |
+| `properties` | `dict` | No |  |
 | `type` | `str` | No |  |
 
 ### Operations
