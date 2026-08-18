@@ -28,7 +28,7 @@ class HikingTrailClosuresSDK
     utility = HikingTrailClosuresUtility.new
     @_utility = utility
 
-    config = HikingTrailClosuresConfig.make_config
+    config = HikingTrailClosuresConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

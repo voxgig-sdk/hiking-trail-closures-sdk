@@ -15,7 +15,7 @@ require_relative "../HikingTrailClosures_sdk"
 module HikingTrailClosuresFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = HikingTrailClosuresConfig.make_config["feature"]
+    f = HikingTrailClosuresConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
