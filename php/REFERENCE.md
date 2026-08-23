@@ -93,7 +93,7 @@ $trail_closure = $client->TrailClosure();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `array` | No |  |
-| `id` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the closure |
 | `properties` | `array` | No |  |
 | `type` | `string` | No |  |
 

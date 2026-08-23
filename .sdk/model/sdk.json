@@ -42,6 +42,7 @@
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the closure",
               "type": "`$STRING`"
             },
             {

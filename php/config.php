@@ -33,6 +33,9 @@ class HikingTrailClosuresConfig
         return [
             "main" => [
                 "name" => "HikingTrailClosures",
+                "slug" => "hiking-trail-closures",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -59,6 +62,7 @@ class HikingTrailClosuresConfig
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the closure',
               'type' => '`$STRING`',
             ],
             [

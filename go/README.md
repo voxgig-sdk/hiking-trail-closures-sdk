@@ -6,7 +6,7 @@ The Golang SDK for the HikingTrailClosures API — an entity-oriented client usi
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.TrailClosure(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -261,7 +261,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"geometry"` |  |
-| `"id"` |  |
+| `"id"` | Unique identifier for the closure |
 | `"properties"` |  |
 | `"type"` |  |
 
@@ -289,7 +289,7 @@ Create an instance: `trailClosure := client.TrailClosure(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `geometry` | `map[string]any` |  |
-| `id` | `string` |  |
+| `id` | `string` | Unique identifier for the closure |
 | `properties` | `map[string]any` |  |
 | `type` | `string` |  |
 

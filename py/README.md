@@ -244,7 +244,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `geometry` |  |
-| `id` |  |
+| `id` | Unique identifier for the closure |
 | `properties` |  |
 | `type` |  |
 
@@ -272,7 +272,7 @@ Create an instance: `trail_closure = client.TrailClosure()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `geometry` | `dict` |  |
-| `id` | `str` |  |
+| `id` | `str` | Unique identifier for the closure |
 | `properties` | `dict` |  |
 | `type` | `str` |  |
 

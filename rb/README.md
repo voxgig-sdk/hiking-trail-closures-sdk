@@ -238,7 +238,7 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `geometry` |  |
-| `id` |  |
+| `id` | Unique identifier for the closure |
 | `properties` |  |
 | `type` |  |
 
@@ -266,7 +266,7 @@ Create an instance: `trail_closure = client.TrailClosure`
 | Field | Type | Description |
 | --- | --- | --- |
 | `geometry` | `Hash` |  |
-| `id` | `String` |  |
+| `id` | `String` | Unique identifier for the closure |
 | `properties` | `Hash` |  |
 | `type` | `String` |  |
 

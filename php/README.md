@@ -248,7 +248,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `geometry` |  |
-| `id` |  |
+| `id` | Unique identifier for the closure |
 | `properties` |  |
 | `type` |  |
 
@@ -276,7 +276,7 @@ Create an instance: `$trail_closure = $client->TrailClosure();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `geometry` | `array` |  |
-| `id` | `string` |  |
+| `id` | `string` | Unique identifier for the closure |
 | `properties` | `array` |  |
 | `type` | `string` |  |
 

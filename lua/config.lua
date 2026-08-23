@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "HikingTrailClosures",
+      slug = "hiking-trail-closures",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -33,6 +36,7 @@ local function make_config()
           },
           {
             ["name"] = "id",
+            ["short"] = "Unique identifier for the closure",
             ["type"] = "`$STRING`",
           },
           {

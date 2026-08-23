@@ -91,7 +91,7 @@ local trail_closure = client:TrailClosure(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `table` | No |  |
-| `id` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the closure |
 | `properties` | `table` | No |  |
 | `type` | `string` | No |  |
 

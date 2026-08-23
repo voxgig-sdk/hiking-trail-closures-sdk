@@ -19,6 +19,9 @@ module HikingTrailClosuresConfig
     {
       "main" => {
         "name" => "HikingTrailClosures",
+        "slug" => "hiking-trail-closures",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -45,6 +48,7 @@ module HikingTrailClosuresConfig
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the closure",
               "type" => "`$STRING`",
             },
             {

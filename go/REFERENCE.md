@@ -99,7 +99,7 @@ fmt.Println(trailClosure.GetName()) // "trail_closure"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `map[string]any` | No |  |
-| `id` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the closure |
 | `properties` | `map[string]any` | No |  |
 | `type` | `string` | No |  |
 

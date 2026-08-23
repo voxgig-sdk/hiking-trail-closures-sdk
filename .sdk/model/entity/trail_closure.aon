@@ -13,6 +13,7 @@ main: kit: entity: trail_closure: {
     {
       name: "id"
       req: false
+      short: "Unique identifier for the closure"
       type: "`$STRING`"
     }
     {

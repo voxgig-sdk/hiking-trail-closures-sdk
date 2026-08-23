@@ -232,7 +232,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `geometry` |  |
-| `id` |  |
+| `id` | Unique identifier for the closure |
 | `properties` |  |
 | `type` |  |
 
@@ -260,7 +260,7 @@ Create an instance: `local trail_closure = client:TrailClosure(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `geometry` | `table` |  |
-| `id` | `string` |  |
+| `id` | `string` | Unique identifier for the closure |
 | `properties` | `table` |  |
 | `type` | `string` |  |
 

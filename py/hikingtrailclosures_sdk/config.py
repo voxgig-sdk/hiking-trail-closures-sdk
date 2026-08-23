@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "HikingTrailClosures",
+            "slug": "hiking-trail-closures",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -54,6 +57,7 @@ def make_config():
           },
           {
             "name": "id",
+            "short": "Unique identifier for the closure",
             "type": "`$STRING`",
           },
           {

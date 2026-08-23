@@ -117,7 +117,7 @@ const trail_closure = client.TrailClosure()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `Record<string, any>` | No |  |
-| `id` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the closure |
 | `properties` | `Record<string, any>` | No |  |
 | `type` | `string` | No |  |
 

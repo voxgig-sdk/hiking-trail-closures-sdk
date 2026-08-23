@@ -94,7 +94,7 @@ trail_closure = client.TrailClosure
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `Hash` | No |  |
-| `id` | `String` | No |  |
+| `id` | `String` | No | Unique identifier for the closure |
 | `properties` | `Hash` | No |  |
 | `type` | `String` | No |  |
 

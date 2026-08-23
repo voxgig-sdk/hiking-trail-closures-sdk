@@ -88,7 +88,7 @@ trail_closure = client.TrailClosure()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `geometry` | `dict` | No |  |
-| `id` | `str` | No |  |
+| `id` | `str` | No | Unique identifier for the closure |
 | `properties` | `dict` | No |  |
 | `type` | `str` | No |  |
 
