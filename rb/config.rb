@@ -28,6 +28,7 @@ module HikingTrailClosuresConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
