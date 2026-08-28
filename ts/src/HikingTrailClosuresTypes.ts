@@ -13,9 +13,7 @@ export interface TrailClosure {
 }
 
 export interface TrailClosureListMatch {
-  geometry?: Record<string, any>
-  id?: string
-  properties?: Record<string, any>
-  type?: string
+  format?: string
+  lang?: string
 }
 

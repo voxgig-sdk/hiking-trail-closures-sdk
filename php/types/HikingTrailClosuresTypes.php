@@ -24,9 +24,7 @@ class TrailClosure
 /** Request payload for TrailClosure#list. */
 class TrailClosureListMatch
 {
-    public ?array $geometry = null;
-    public ?string $id = null;
-    public ?array $properties = null;
-    public ?string $type = null;
+    public ?string $format = null;
+    public ?string $lang = null;
 }
 

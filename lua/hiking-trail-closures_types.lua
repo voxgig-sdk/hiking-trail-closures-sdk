@@ -13,10 +13,8 @@
 ---@field type? string
 
 ---@class TrailClosureListMatch
----@field geometry? table
----@field id? string
----@field properties? table
----@field type? string
+---@field format? string
+---@field lang? string
 
 local M = {}
 

@@ -31,22 +31,14 @@ TrailClosure = Struct.new(
 
 # Request payload for TrailClosure#list.
 #
-# @!attribute [rw] geometry
-#   @return [Hash, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] format
 #   @return [String, nil]
 #
-# @!attribute [rw] properties
-#   @return [Hash, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] lang
 #   @return [String, nil]
 TrailClosureListMatch = Struct.new(
-  :geometry,
-  :id,
-  :properties,
-  :type,
+  :format,
+  :lang,
   keyword_init: true
 )
 

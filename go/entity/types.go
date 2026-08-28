@@ -22,10 +22,8 @@ type TrailClosure struct {
 
 // TrailClosureListMatch is the typed request payload for TrailClosure.ListTyped.
 type TrailClosureListMatch struct {
-	Geometry *map[string]any `json:"geometry,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Properties *map[string]any `json:"properties,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Format *string `json:"format,omitempty"`
+	Lang *string `json:"lang,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

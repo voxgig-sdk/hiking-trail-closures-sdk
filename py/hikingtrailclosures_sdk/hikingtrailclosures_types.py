@@ -24,7 +24,5 @@ class TrailClosure(TypedDict, total=False):
 
 
 class TrailClosureListMatch(TypedDict, total=False):
-    geometry: dict
-    id: str
-    properties: dict
-    type: str
+    format: str
+    lang: str
