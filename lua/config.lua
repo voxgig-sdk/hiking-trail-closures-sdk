@@ -49,6 +49,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "trail_closure",
         ["op"] = {
           ["list"] = {
@@ -77,8 +81,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/ch.astra.wanderland-sperrungen_umleitungen/",
-                ["parts"] = {
-                  "ch.astra.wanderland-sperrungen_umleitungen",
+                ["segments"] = {
+                  {
+                    ["lit"] = "ch.astra.wanderland-sperrungen_umleitungen",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -89,6 +95,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.features`",
+                },
+                ["parts"] = {
+                  "ch.astra.wanderland-sperrungen_umleitungen",
                 },
               },
             },

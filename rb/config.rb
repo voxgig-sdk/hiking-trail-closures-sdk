@@ -61,6 +61,10 @@ module HikingTrailClosuresConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "trail_closure",
           "op" => {
             "list" => {
@@ -89,8 +93,10 @@ module HikingTrailClosuresConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/ch.astra.wanderland-sperrungen_umleitungen/",
-                  "parts" => [
-                    "ch.astra.wanderland-sperrungen_umleitungen",
+                  "segments" => [
+                    {
+                      "lit" => "ch.astra.wanderland-sperrungen_umleitungen",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -102,6 +108,9 @@ module HikingTrailClosuresConfig
                     "req" => "`reqdata`",
                     "res" => "`body.features`",
                   },
+                  "parts" => [
+                    "ch.astra.wanderland-sperrungen_umleitungen",
+                  ],
                 },
               ],
             },

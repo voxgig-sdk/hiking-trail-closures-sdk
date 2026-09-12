@@ -61,8 +61,10 @@ main: kit: entity: trail_closure: {
           }
           method: "GET"
           orig: "/ch.astra.wanderland-sperrungen_umleitungen/"
-          parts: [
-            "ch.astra.wanderland-sperrungen_umleitungen"
+          segments: [
+            {
+              lit: "ch.astra.wanderland-sperrungen_umleitungen"
+            }
           ]
           select: {
             exist: [
