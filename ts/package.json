@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/hiking-trail-closures",
+  "name": "@voxgig-sdk/hiking-trail-closures-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Hiking Trail Closures public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

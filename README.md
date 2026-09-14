@@ -105,7 +105,7 @@ local results, err = client:TrailClosure():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
+| TypeScript | `@voxgig-sdk/hiking-trail-closures-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
 | Python | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
 | PHP | `voxgig-sdk/hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/hiking-trail-closures-sdk/go` | `go get github.com/voxgig-sdk/hiking-trail-closures-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:TrailClosure():list()
 ### TypeScript
 
 ```ts
-import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures'
+import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures-sdk'
 
 const client = new HikingTrailClosuresSDK()
 

@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures'
+import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures-sdk'
 
 const client = new HikingTrailClosuresSDK()
 ```
@@ -409,7 +409,7 @@ hiking-trail-closures/
 Import the SDK from the package root:
 
 ```ts
-import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures'
+import { HikingTrailClosuresSDK } from '@voxgig-sdk/hiking-trail-closures-sdk'
 ```
 
 ### Entity state
