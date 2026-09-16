@@ -29,5 +29,179 @@
         "type": "sa3"
       }
     }
+  },
+  "requests": {
+    "GET /ch.astra.wanderland-sperrungen_umleitungen/": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getTrailClosures",
+        "parameters": [
+          {
+            "description": "Response format (json, geojson, xml)",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "geojson",
+                "xml"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Language for response (de, fr, it, en)",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "de",
+              "enum": [
+                "de",
+                "fr",
+                "it",
+                "en"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/geo+json": {
+                "schema": {
+                  "properties": {
+                    "features": {
+                      "items": {
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "example": "FeatureCollection",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "features": {
+                      "items": {
+                        "properties": {
+                          "geometry": {
+                            "properties": {
+                              "coordinates": {
+                                "items": {
+                                  "items": {
+                                    "type": "number"
+                                  },
+                                  "type": "array"
+                                },
+                                "type": "array"
+                              },
+                              "type": {
+                                "example": "LineString",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "id": {
+                            "description": "Unique identifier for the closure",
+                            "type": "string"
+                          },
+                          "properties": {
+                            "properties": {
+                              "alternativeRoute": {
+                                "description": "Information about alternative routes",
+                                "type": "string"
+                              },
+                              "description": {
+                                "description": "Detailed description of the closure or diversion",
+                                "type": "string"
+                              },
+                              "endDate": {
+                                "description": "Expected end date of the closure",
+                                "format": "date",
+                                "type": "string"
+                              },
+                              "name": {
+                                "description": "Name of the affected trail or route",
+                                "type": "string"
+                              },
+                              "reason": {
+                                "description": "Reason for closure or diversion",
+                                "type": "string"
+                              },
+                              "startDate": {
+                                "description": "Start date of the closure",
+                                "format": "date",
+                                "type": "string"
+                              },
+                              "status": {
+                                "description": "Closure status",
+                                "enum": [
+                                  "closed",
+                                  "diverted"
+                                ],
+                                "type": "string"
+                              },
+                              "type": {
+                                "description": "Type of route (hiking trail, cycle route, mountain bike route)",
+                                "enum": [
+                                  "hiking",
+                                  "cycling",
+                                  "mountainbike"
+                                ],
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": {
+                            "example": "Feature",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "example": "FeatureCollection",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with trail closure information"
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "503": {
+            "description": "Service unavailable"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

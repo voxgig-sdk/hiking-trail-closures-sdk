@@ -4,7 +4,10 @@ declare(strict_types=1);
 // HikingTrailClosures SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class HikingTrailClosuresFeatures
@@ -14,8 +17,14 @@ class HikingTrailClosuresFeatures
         switch ($name) {
             case "base":
                 return new HikingTrailClosuresBaseFeature();
+            case "ratelimit":
+                return new HikingTrailClosuresRatelimitFeature();
+            case "retry":
+                return new HikingTrailClosuresRetryFeature();
             case "test":
                 return new HikingTrailClosuresTestFeature();
+            case "timeout":
+                return new HikingTrailClosuresTimeoutFeature();
             default:
                 return new HikingTrailClosuresBaseFeature();
         }
@@ -31,7 +40,10 @@ class HikingTrailClosuresFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

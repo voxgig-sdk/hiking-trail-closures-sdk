@@ -1,12 +1,18 @@
 # HikingTrailClosures SDK feature factory
 
 from hikingtrailclosures_sdk.feature.base_feature import HikingTrailClosuresBaseFeature
+from hikingtrailclosures_sdk.feature.ratelimit_feature import HikingTrailClosuresRatelimitFeature
+from hikingtrailclosures_sdk.feature.retry_feature import HikingTrailClosuresRetryFeature
 from hikingtrailclosures_sdk.feature.test_feature import HikingTrailClosuresTestFeature
+from hikingtrailclosures_sdk.feature.timeout_feature import HikingTrailClosuresTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: HikingTrailClosuresBaseFeature(),
+    "ratelimit": lambda: HikingTrailClosuresRatelimitFeature(),
+    "retry": lambda: HikingTrailClosuresRetryFeature(),
     "test": lambda: HikingTrailClosuresTestFeature(),
+    "timeout": lambda: HikingTrailClosuresTimeoutFeature(),
 }
 
 
