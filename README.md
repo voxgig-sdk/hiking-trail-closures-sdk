@@ -105,12 +105,12 @@ local results, err = client:TrailClosure():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/hiking-trail-closures-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
-| Python | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
-| PHP | `voxgig-sdk/hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
+| TypeScript | `@voxgig-sdk/hiking-trail-closures-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/tags) |
+| Python | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/tags) |
+| PHP | `voxgig-sdk/hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/hiking-trail-closures-sdk/go` | `go get github.com/voxgig-sdk/hiking-trail-closures-sdk/go@latest` |
-| Ruby | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
-| Lua | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/releases) |
+| Ruby | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/tags) |
+| Lua | `voxgig-sdk-hiking-trail-closures` | publish pending — [install from git tag](https://github.com/voxgig-sdk/hiking-trail-closures-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/hiking-trail-closures-sdk/go-cli` | `go install github.com/voxgig-sdk/hiking-trail-closures-sdk/go-cli/cmd/hiking-trail-closures@latest` |
 | Go MCP server | `github.com/voxgig-sdk/hiking-trail-closures-sdk/go-mcp` | `go get github.com/voxgig-sdk/hiking-trail-closures-sdk/go-mcp@latest` |
 

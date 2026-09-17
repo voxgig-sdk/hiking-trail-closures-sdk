@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      trail_closure: {
-      },
-
+        trail_closure: {
+        },
+  
     }
   }
 
