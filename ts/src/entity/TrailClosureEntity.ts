@@ -19,7 +19,6 @@ import type {
   TrailClosureListMatch,
 } from '../HikingTrailClosuresTypes'
 
-// TODO: needs Entity superclass
 class TrailClosureEntity extends HikingTrailClosuresEntityBase<TrailClosure> {
 
   constructor(client: HikingTrailClosuresSDK, entopts: any) {

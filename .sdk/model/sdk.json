@@ -24,39 +24,109 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "trail_closure": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "geometry",
-              "req": false,
-              "type": "`$OBJECT`"
+          "fields": {
+            "geometry": {
+              "a": true,
+              "h": "Geometry",
+              "n": "geometry",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the closure",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the closure",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "properties",
-              "req": false,
-              "type": "`$OBJECT`"
+            "properties": {
+              "a": true,
+              "h": "Properties",
+              "n": "properties",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": false,
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -68,50 +138,50 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /ch.astra.wanderland-sperrungen_umleitungen/",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "json",
-                        "kind": "query",
-                        "name": "format",
-                        "orig": "format",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "de",
-                        "kind": "query",
-                        "name": "lang",
-                        "orig": "lang",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "de",
+                        "k": "query",
+                        "n": "lang",
+                        "or": "lang",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /ch.astra.wanderland-sperrungen_umleitungen/",
-                    "json": "{\"operationId\":\"getTrailClosures\",\"parameters\":[{\"description\":\"Response format (json, geojson, xml)\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"geojson\",\"xml\"],\"type\":\"string\"}},{\"description\":\"Language for response (de, fr, it, en)\",\"in\":\"query\",\"name\":\"lang\",\"required\":false,\"schema\":{\"default\":\"de\",\"enum\":[\"de\",\"fr\",\"it\",\"en\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/geo+json\":{\"schema\":{\"properties\":{\"features\":{\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"type\":{\"example\":\"FeatureCollection\",\"type\":\"string\"}},\"type\":\"object\"}},\"application/json\":{\"schema\":{\"properties\":{\"features\":{\"items\":{\"properties\":{\"geometry\":{\"properties\":{\"coordinates\":{\"items\":{\"items\":{\"type\":\"number\"},\"type\":\"array\"},\"type\":\"array\"},\"type\":{\"example\":\"LineString\",\"type\":\"string\"}},\"type\":\"object\"},\"id\":{\"description\":\"Unique identifier for the closure\",\"type\":\"string\"},\"properties\":{\"properties\":{\"alternativeRoute\":{\"description\":\"Information about alternative routes\",\"type\":\"string\"},\"description\":{\"description\":\"Detailed description of the closure or diversion\",\"type\":\"string\"},\"endDate\":{\"description\":\"Expected end date of the closure\",\"format\":\"date\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the affected trail or route\",\"type\":\"string\"},\"reason\":{\"description\":\"Reason for closure or diversion\",\"type\":\"string\"},\"startDate\":{\"description\":\"Start date of the closure\",\"format\":\"date\",\"type\":\"string\"},\"status\":{\"description\":\"Closure status\",\"enum\":[\"closed\",\"diverted\"],\"type\":\"string\"},\"type\":{\"description\":\"Type of route (hiking trail, cycle route, mountain bike route)\",\"enum\":[\"hiking\",\"cycling\",\"mountainbike\"],\"type\":\"string\"}},\"type\":\"object\"},\"type\":{\"example\":\"Feature\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"type\":{\"example\":\"FeatureCollection\",\"type\":\"string\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"type\":\"object\"}}},\"description\":\"Successful response with trail closure information\"},\"400\":{\"description\":\"Bad request - invalid parameters\"},\"500\":{\"description\":\"Internal server error\"},\"503\":{\"description\":\"Service unavailable\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/ch.astra.wanderland-sperrungen_umleitungen/",
-                  "segments": [
-                    {
-                      "lit": "ch.astra.wanderland-sperrungen_umleitungen"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/ch.astra.wanderland-sperrungen_umleitungen/",
+                  "q": {
                     "exist": [
                       "format",
                       "lang"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "ch.astra.wanderland-sperrungen_umleitungen"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.features`"
                   }
@@ -540,13 +610,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrailClosureEntity = void 0;
 const HikingTrailClosuresEntityBase_1 = require("../HikingTrailClosuresEntityBase");
-// TODO: needs Entity superclass
 class TrailClosureEntity extends HikingTrailClosuresEntityBase_1.HikingTrailClosuresEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

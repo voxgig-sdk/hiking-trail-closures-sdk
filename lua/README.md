@@ -43,7 +43,7 @@ local trailclosures, err = client:TrailClosure():list()
 if err then error(err) end
 
 for _, item in ipairs(trailclosures) do
-  print(item["id"], item["type"])
+  print(item["id"])
 end
 ```
 

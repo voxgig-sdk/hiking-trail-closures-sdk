@@ -1,7 +1,7 @@
 // Typed models for the HikingTrailClosures SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,10 +14,6 @@ import (
 
 // TrailClosure is the typed data model for the trail_closure entity.
 type TrailClosure struct {
-	Geometry *map[string]any `json:"geometry,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Properties *map[string]any `json:"properties,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // TrailClosureListMatch is the typed request payload for TrailClosure.ListTyped.

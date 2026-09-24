@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,19 +107,23 @@ class Config {
             "fields": [
                 {
                     "name": "geometry",
+                    "title": "Geometry",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the closure",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the closure"
                 },
                 {
                     "name": "properties",
+                    "title": "Properties",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "type",
+                    "title": "Type",
                     "type": "`$STRING`"
                 }
             ],
@@ -141,24 +138,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "json",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "de",
-                                        "kind": "query",
-                                        "name": "lang",
-                                        "orig": "lang",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/ch.astra.wanderland-sperrungen_umleitungen/",
@@ -167,19 +146,38 @@ class Config {
                                     "lit": "ch.astra.wanderland-sperrungen_umleitungen"
                                 }
                             ],
+                            "parts": [
+                                "ch.astra.wanderland-sperrungen_umleitungen"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.features`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "json"
+                                    },
+                                    {
+                                        "name": "lang",
+                                        "orig": "lang",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "de"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "format",
                                     "lang"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.features`"
-                            },
-                            "parts": [
-                                "ch.astra.wanderland-sperrungen_umleitungen"
-                            ]
+                            }
                         }
                     ]
                 }

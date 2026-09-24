@@ -1,0 +1,95 @@
+# Entity: trail_closure
+
+main: kit: entity: trail_closure: {
+
+  alias: field: {}
+
+  fields: {
+    geometry: {
+      h: "Geometry"
+      n: "geometry"
+      r: false
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the closure"
+      t: "`$STRING`"
+    }
+    properties: {
+      h: "Properties"
+      n: "properties"
+      r: false
+      t: "`$OBJECT`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "trail_closure"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /ch.astra.wanderland-sperrungen_umleitungen/"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "de"
+                k: "query"
+                n: "lang"
+                or: "lang"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/ch.astra.wanderland-sperrungen_umleitungen/"
+          q: {
+            exist: [
+              "format"
+              "lang"
+            ]
+          }
+          s: [
+            {
+              lit: "ch.astra.wanderland-sperrungen_umleitungen"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.features`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

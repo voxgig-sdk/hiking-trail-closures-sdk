@@ -91,19 +91,23 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "geometry",
+						"title": "Geometry",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the closure",
+						"title": "Id",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the closure",
 					},
 					map[string]any{
 						"name": "properties",
+						"title": "Properties",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "type",
+						"title": "Type",
 						"type": "`$STRING`",
 					},
 				},
@@ -118,24 +122,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "json",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "de",
-											"kind": "query",
-											"name": "lang",
-											"orig": "lang",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/ch.astra.wanderland-sperrungen_umleitungen/",
@@ -144,18 +130,37 @@ func MakeConfig() map[string]any {
 										"lit": "ch.astra.wanderland-sperrungen_umleitungen",
 									},
 								},
+								"parts": []any{
+									"ch.astra.wanderland-sperrungen_umleitungen",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.features`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "lang",
+											"orig": "lang",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "de",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"format",
 										"lang",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.features`",
-								},
-								"parts": []any{
-									"ch.astra.wanderland-sperrungen_umleitungen",
 								},
 							},
 						},
