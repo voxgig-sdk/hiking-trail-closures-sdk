@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 HikingTrailClosuresUtility.registrar = ->(u) {
   u.clean = HikingTrailClosuresUtilities::Clean
+  u.clean_add = HikingTrailClosuresUtilities::CleanAdd
+  u.clean_explain = HikingTrailClosuresUtilities::CleanExplain
   u.done = HikingTrailClosuresUtilities::Done
   u.make_error = HikingTrailClosuresUtilities::MakeError
   u.feature_add = HikingTrailClosuresUtilities::FeatureAdd

@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 HikingTrailClosuresUtility::setRegistrar(function (HikingTrailClosuresUtility $u): void {
     $u->clean = [HikingTrailClosuresClean::class, 'call'];
+    $u->clean_add = [HikingTrailClosuresClean::class, 'add'];
+    $u->clean_explain = [HikingTrailClosuresDone::class, 'clean_explain'];
     $u->done = [HikingTrailClosuresDone::class, 'call'];
     $u->make_error = [HikingTrailClosuresMakeError::class, 'call'];
     $u->feature_add = [HikingTrailClosuresFeatureAdd::class, 'call'];
