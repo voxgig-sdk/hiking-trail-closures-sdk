@@ -79,6 +79,7 @@ module HikingTrailClosuresConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -164,11 +165,20 @@ module HikingTrailClosuresConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
-                      "lang",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "json",
+                        "media" => "application/geo+json",
+                      },
+                      {
+                        "kind" => "raw",
+                        "media" => "application/xml",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

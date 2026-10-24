@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -181,11 +182,20 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
-                    "lang",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "json",
+                      "media": "application/geo+json",
+                    },
+                    {
+                      "kind": "raw",
+                      "media": "application/xml",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],

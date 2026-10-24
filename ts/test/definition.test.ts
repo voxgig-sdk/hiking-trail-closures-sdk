@@ -16,13 +16,29 @@ const PLAN: any[] = [
     "path": "/ch.astra.wanderland-sperrungen_umleitungen/",
     "args": [],
     "select": {
-      "format": "v1",
-      "lang": "v1"
+      "format": "json",
+      "lang": "de"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json",
+      "application/geo+json",
+      "application/xml"
+    ],
     "query": [
       "format",
       "lang"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "lang",
+        "wire": "lang"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -30,26 +46,26 @@ const PLAN: any[] = [
       "type": "FeatureCollection",
       "features": [
         {
+          "type": "Feature",
+          "id": "x",
           "geometry": {
+            "type": "LineString",
             "coordinates": [
               [
                 1
               ]
-            ],
-            "type": "LineString"
+            ]
           },
-          "id": "x",
           "properties": {
-            "alternativeRoute": "x",
-            "description": "x",
-            "endDate": "2026-01-01",
             "name": "x",
+            "type": "hiking",
+            "status": "closed",
             "reason": "x",
             "startDate": "2026-01-01",
-            "status": "closed",
-            "type": "hiking"
-          },
-          "type": "Feature"
+            "endDate": "2026-01-01",
+            "description": "x",
+            "alternativeRoute": "x"
+          }
         }
       ]
     },

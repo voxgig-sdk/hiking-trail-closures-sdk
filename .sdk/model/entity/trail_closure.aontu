@@ -70,11 +70,19 @@ main: kit: entity: trail_closure: {
           }
           m: "GET"
           o: "/ch.astra.wanderland-sperrungen_umleitungen/"
-          q: {
-            exist: [
-              "format"
-              "lang"
+          rs: {
+            alternatives: [
+              {
+                kind: "json"
+                media: "application/geo+json"
+              }
+              {
+                kind: "raw"
+                media: "application/xml"
+              }
             ]
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
